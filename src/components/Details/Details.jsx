@@ -1,7 +1,7 @@
 import React from 'react';
 import './Details.css';
 
-export default function Details({ fox, dog, cat, duck, math, joke, forza, food, coffee, bored }) {
+export default function Details({ fox, dog, cat, math, joke, forza, bored }) {
   return (
     <div className="details">
       <a href={fox.link}>
@@ -10,16 +10,16 @@ export default function Details({ fox, dog, cat, duck, math, joke, forza, food, 
       </a>
       <a>
         <h2>Random Dog Image API</h2>
+        <p>
+          some links to random dog pics are video files, which will not load correctly on this
+          simple web app
+        </p>
         <img src={dog.url} />
       </a>
       <a href="https://aws.random.cat/">
         <h2>Random Cat Image API</h2>
         <img src={cat.file} />
       </a>
-      {/* <a href="https://random-d.uk/api/quack">
-        <h2>Random Duck Image API</h2>
-        <img src={duck.url} />
-      </a> */}
       <a href="https://x-math.herokuapp.com/">
         <h2>Random Math API</h2>
         <p>
@@ -34,14 +34,6 @@ export default function Details({ fox, dog, cat, duck, math, joke, forza, food, 
         <h2>Random Forza Image API</h2>
         <img src={forza.image} />
       </a>
-      {/* <a href="https://foodish-api.herokuapp.com/">
-        <h2>Random Food Image API</h2>
-        <img src={food.image} />
-      </a> */}
-      {/* <a href="https://coffee.alexflipnote.dev/">
-        <h2>Random Coffee Image API</h2>
-        <img src={coffee.file} />
-      </a> */}
       <a href="">
         <h2>Random Bored Acitivity Suggestion API</h2>
         <h3>{bored.activity}</h3>

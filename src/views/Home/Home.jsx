@@ -7,12 +7,9 @@ export default function Home() {
   const [fox, setFox] = useState({});
   const [dog, setDog] = useState({});
   const [cat, setCat] = useState({});
-  const [duck, setDuck] = useState({});
   const [math, setMath] = useState({});
   const [joke, setJoke] = useState({});
   const [forza, setForza] = useState({});
-  const [food, setFood] = useState({});
-  const [coffee, setCoffee] = useState({});
   const [bored, setBored] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -30,10 +27,6 @@ export default function Home() {
       const catDataJSON = await catData.json();
       setCat(catDataJSON);
 
-      // const duckData = await fetch('https://random-d.uk/api/quack');
-      // const duckDataJSON = await duckData.json();
-      // setDuck(duckDataJSON);
-
       const mathData = await fetch('https://x-math.herokuapp.com/api/random');
       const mathDataJSON = await mathData.json();
       setMath(mathDataJSON);
@@ -45,14 +38,6 @@ export default function Home() {
       const forzaData = await fetch('https://forza-api.tk/');
       const forzaDataJSON = await forzaData.json();
       setForza(forzaDataJSON);
-
-      // const foodData = await fetch('https://foodish-api.herokuapp.com/api/');
-      // const foodDataJSON = await foodData.json();
-      // setFood(foodDataJSON);
-
-      // const coffeeData = await fetch('https://coffee.alexflipnote.dev/random.json');
-      // const coffeeDataJSON = await coffeeData.json();
-      // setCoffee(coffeeDataJSON);
 
       const boredData = await fetch('http://www.boredapi.com/api/activity/');
       const boredDataJSON = await boredData.json();
@@ -81,12 +66,6 @@ export default function Home() {
     setCat(catDataJSON);
   };
 
-  const handleDuck = async () => {
-    const duckData = await fetch('https://random-d.uk/api/quack');
-    const duckDataJSON = await duckData.json();
-    setDuck(duckDataJSON);
-  };
-
   const handleMath = async () => {
     const mathData = await fetch('https://x-math.herokuapp.com/api/random');
     const mathDataJSON = await mathData.json();
@@ -103,18 +82,6 @@ export default function Home() {
     const forzaData = await fetch('https://forza-api.tk/');
     const forzaDataJSON = await forzaData.json();
     setForza(forzaDataJSON);
-  };
-
-  const handleFood = async () => {
-    const foodData = await fetch('https://foodish-api.herokuapp.com/api/');
-    const foodDataJSON = await foodData.json();
-    setFood(foodDataJSON);
-  };
-
-  const handleCoffee = async () => {
-    const coffeeData = await fetch('https://coffee.alexflipnote.dev/random.json');
-    const coffeeDataJSON = await coffeeData.json();
-    setCoffee(coffeeDataJSON);
   };
 
   const handleBored = async () => {
@@ -135,16 +102,13 @@ export default function Home() {
           handleFox,
           handleDog,
           handleCat,
-          handleDuck,
           handleMath,
           handleJoke,
           handleForza,
-          handleFood,
-          handleCoffee,
           handleBored,
         }}
       />
-      <Details {...{ fox, dog, cat, duck, math, joke, forza, food, coffee, bored }} />
+      <Details {...{ fox, dog, cat, math, joke, forza, bored }} />
     </div>
   );
 }

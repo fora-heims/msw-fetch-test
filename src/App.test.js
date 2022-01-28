@@ -9,3 +9,10 @@ test('renders fetch title after loading state goes away', async () => {
     expect(screen.findByText(/so fetch/i)).toBeInTheDocument();
   });
 });
+
+test('renders fetch title after loading state goes away', async () => {
+  render(<App />);
+  waitFor(() => {
+    expect(screen.getAllByRole('button')).toHaveLength(5);
+  });
+});
