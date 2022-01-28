@@ -8,7 +8,6 @@ export default function Home() {
   const [dog, setDog] = useState({});
   const [cat, setCat] = useState({});
   const [math, setMath] = useState({});
-  const [joke, setJoke] = useState({});
   const [forza, setForza] = useState({});
   const [bored, setBored] = useState({});
   const [loading, setLoading] = useState(true);
@@ -30,10 +29,6 @@ export default function Home() {
       const mathData = await fetch('https://x-math.herokuapp.com/api/random');
       const mathDataJSON = await mathData.json();
       setMath(mathDataJSON);
-
-      const jokeData = await fetch('https://geek-jokes.sameerkumar.website/api?format=json');
-      const jokeDataJSON = await jokeData.json();
-      setJoke(jokeDataJSON);
 
       const forzaData = await fetch('https://forza-api.tk/');
       const forzaDataJSON = await forzaData.json();
@@ -72,12 +67,6 @@ export default function Home() {
     setMath(mathDataJSON);
   };
 
-  const handleJoke = async () => {
-    const jokeData = await fetch('https://geek-jokes.sameerkumar.website/api?format=json');
-    const jokeDataJSON = await jokeData.json();
-    setJoke(jokeDataJSON);
-  };
-
   const handleForza = async () => {
     const forzaData = await fetch('https://forza-api.tk/');
     const forzaDataJSON = await forzaData.json();
@@ -103,12 +92,11 @@ export default function Home() {
           handleDog,
           handleCat,
           handleMath,
-          handleJoke,
           handleForza,
           handleBored,
         }}
       />
-      <Details {...{ fox, dog, cat, math, joke, forza, bored }} />
+      <Details {...{ fox, dog, cat, math, forza, bored }} />
     </div>
   );
 }

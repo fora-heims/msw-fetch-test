@@ -1,7 +1,7 @@
 import React from 'react';
 import './Details.css';
 
-export default function Details({ fox, dog, cat, math, joke, forza, bored }) {
+export default function Details({ fox, dog, cat, math, forza, bored }) {
   return (
     <div className="details">
       <a href={fox.link}>
@@ -25,10 +25,6 @@ export default function Details({ fox, dog, cat, math, joke, forza, bored }) {
         <p>
           {math.first} {math.operation} {math.second} = {math.answer}
         </p>
-      </a>
-      <a href="https://geek-jokes.sameerkumar.website/">
-        <h2>Random Joke API</h2>
-        <p>{joke.joke}</p>
       </a>
       <a href="https://docs.forza-api.tk/">
         <h2>Random Forza Image API</h2>

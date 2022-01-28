@@ -38,17 +38,6 @@ const server = setupServer(
       })
     );
   }),
-  rest.get('https://geek-jokes.sameerkumar.website/api?select=json', (req, res, ctx) => {
-    // const select = req.url.searchParams.get('format');
-    // if (select === 'json') {
-    return res(
-      ctx.json({
-        joke: 'This is not a joke. This is a mock response to prove that Mock Service Worker is intercepting the API requests, and sending back this object as the response.',
-      })
-    );
-    // }
-    // return res(ctx.json({ error: 'something did not work correctly with MSW' }));
-  }),
   rest.get('https://forza-api.tk/', (req, res, ctx) => {
     return res(
       ctx.json({
